@@ -1,0 +1,52 @@
+{
+	"format_version": 2,
+	"metadata": {
+		"authors": [
+			"DcutE55E"
+		],
+		"generated_with": {
+			"bridge": [
+				"2.7.42"
+			],
+			"dash": [
+				"0.11.7"
+			]
+		}
+	},
+	"header": {
+		"name": "SMP Essentials RP v3.0.0",
+		"description": "Resource pack for SMP Essentials mod",
+		"min_engine_version": [
+			1,
+			21,
+			0
+		],
+		"uuid": "f122622f-6647-4f5c-b68c-935664ad552d",
+		"version": [
+			3,
+			0,
+			0
+		]
+	},
+	"modules": [
+		{
+			"type": "resources",
+			"uuid": "b64d439d-024e-4f2d-8cbc-cf19bec7c34e",
+			"version": [
+				3,
+				0,
+				0
+			]
+		}
+	],
+	"dependencies": [
+		{
+			"uuid": "30123564-39ae-43e4-8c10-a5519e98ae8a",
+			"version": [
+				3,
+				0,
+				0
+			]
+		}
+	]
+}
