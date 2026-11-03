@@ -1,0 +1,41 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "realm:gift",
+			"is_spawnable": false,
+			"is_summonable": false,
+			"is_experimental": false
+		},
+		"component_groups": {},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 1.03
+			},
+			"minecraft:pushable": {
+				"is_pushable": false
+			},
+			"minecraft:physics": {
+				"has_gravity": false
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"on_damage": {
+						"filters": {
+							"test": "is_family",
+							"subject": "other",
+							"value": "player"
+						}
+					},
+					"deals_damage": false
+				}
+			},
+			"minecraft:nameable": {
+				"always_show": true,
+				"allow_name_tag_renaming": false
+			}
+		},
+		"events": {}
+	}
+}

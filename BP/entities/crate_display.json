@@ -1,0 +1,68 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "realm:crate_display",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"properties": {
+				"realm:display_type": {
+					"type": "enum",
+					"values": [
+						"items",
+						"trident",
+						"blocks",
+						"fences",
+						"walls",
+						"equippables",
+						"amethyst",
+						"buttons",
+						"conduit",
+						"heavy_core",
+						"pointed_dripstone",
+						"banners",
+						"rods",
+						"amethyst_2",
+						"heads",
+						"golem_statue"
+					],
+					"default": "items",
+					"client_sync": true
+				}
+			}
+		},
+		"components": {
+			"minecraft:health": {
+				"value": 1,
+				"max": 1
+			},
+			"minecraft:collision_box": {
+				"width": 0.1,
+				"height": 0.1
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"deals_damage": false
+				}
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			},
+			"minecraft:knockback_resistance": {
+				"value": 1
+			},
+			"minecraft:fire_immune": true,
+			"minecraft:physics": {
+				"has_gravity": false,
+				"has_collision": false
+			},
+			"minecraft:inventory": {
+				"container_type": "container",
+				"inventory_size": 1,
+				"private": true
+			}
+		}
+	}
+}

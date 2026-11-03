@@ -1,0 +1,49 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "realm:boss_test",
+			"is_spawnable": false,
+			"is_summonable": false,
+			"is_experimental": false
+		},
+		"component_groups": {},
+		"components": {
+			"minecraft:boss": {
+				"name": "§5§lObsidian §gEssentials",
+				"hud_range": 40
+			},
+			"minecraft:health": {
+				"max": 20,
+				"min": 0,
+				"value": {
+					"range_max": 20,
+					"range_min": 0
+				}
+			},
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 1.03
+			},
+			"minecraft:pushable": {
+				"is_pushable": false
+			},
+			"minecraft:physics": {
+				"has_gravity": false
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"on_damage": {
+						"filters": {
+							"test": "is_family",
+							"subject": "other",
+							"value": "player"
+						}
+					},
+					"deals_damage": false
+				}
+			}
+		},
+		"events": {}
+	}
+}
