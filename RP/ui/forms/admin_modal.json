@@ -1,0 +1,159 @@
+{
+    "namespace": "admin_m",
+
+    "form_background": {
+        "type": "image",
+        "$chosen_size|default": [225, 200],
+        "$chosen_texture": "",
+
+        "size": "$chosen_size",
+        "texture": "$chosen_texture"
+    },
+
+    "title_label": {
+        "type": "label",
+        "text": "#title_text",
+        "size": [
+            "100%",
+            "100%"
+        ],
+        "font_scale_factor": 1,
+        "font_type": "MinecraftTen",
+        "backup_font_type": "MinecraftTen",
+        "color": "#title_text_color",
+        "anchor_from": "top_right",
+        "anchor_to": "top_right",
+        "text_alignment": "center",
+
+        "$title_offset|default": [0, 0],
+        "offset": "$title_offset"
+    },
+
+    "close_button@common.close_button": {
+        "size": [18, 18],
+        "offset": [3, -3],
+        "anchor_from": "top_right",
+        "anchor_to": "top_right",
+        "controls": [
+          {
+            "default@common.close_button_panel": {
+                "type": "image",
+                "$close_button_texture": "textures/ui/adminm_closed",
+                "size": [
+                    "100%",
+                    "100%"
+                ]         
+              }
+        },
+        {
+            "hover@common.close_button_panel": {
+                "type": "image",
+                "$close_button_texture": "textures/ui/adminm_closeh",
+                "size": [
+                    "100%",
+                    "100%"
+                ]
+            }
+        },
+        {
+            "pressed@common.close_button_panel": {
+                "type": "image",
+                "$close_button_texture": "textures/ui/adminm_closep",
+                "size": [
+                    "100%",
+                    "100%"
+                ]
+            }
+        }
+        ]
+    },
+
+    "a_form_panel@common.scrolling_panel" : {
+        "anchor_to": "top_left",
+        "anchor_from": "top_left",
+        "$show_background": false,
+        "size": [ "90%", "85%" ], // Changes scrolling stuff width and height: visiblity (For example less width percentage would make the scroll stuff hide more of full size)
+        "offset": [13, 17],
+        "$scrolling_content": "admin_m.acustom_form_content",
+        "$scroll_size": [ 5, "100% - 4px" ],
+        "$scrolling_pane_size": [ "100% - 4px", "100% - 2px" ],
+        "$scrolling_pane_offset": [ 2, 0 ],
+        "$scroll_bar_right_padding_size": [ 0, 0 ]
+      },
+    
+      "generated_contents": {
+        "type": "stack_panel",
+        "size": ["100%", "100%c"],
+        "orientation": "vertical",
+        "anchor_from": "top_left",
+        "anchor_to": "top_left",
+    
+        "factory":{
+          "name": "buttons",
+          "control_ids": {
+            "label": "@server_form.custom_label",
+            "toggle": "@server_form.custom_toggle",
+            "slider": "@server_form.custom_slider",
+            "step_slider": "@server_form.custom_step_slider",
+            "dropdown": "@server_form.custom_dropdown",
+            "input": "@server_form.custom_input",
+            "header": "@server_form.custom_header",
+            "divider": "@settings_common.option_group_section_divider"
+          }
+        },
+    
+        "collection_name": "custom_form",
+        "bindings": [
+          {
+            "binding_name": "#custom_form_length",
+            "binding_name_override": "#collection_length"
+          }
+        ]
+      },
+    
+      "acustom_form_content": {
+        "type": "stack_panel",
+        "size": ["100% - 4px", "100%c"],
+        "offset": [2,0],
+        "orientation": "vertical",
+        "anchor_from": "top_left",
+        "anchor_to": "top_left",
+    
+        "controls": [
+          {
+            "generated_form@admin_m.generated_contents": {}
+          },
+          {
+            "submit_button@common_buttons.light_text_button": {
+              "$pressed_button_name": "button.submit_custom_form",
+              "anchor_from": "top_left",
+              "anchor_to": "top_left",
+              "size": [ "100%", 32 ],
+
+              "$default_button_texture": "textures/ui/amodal_submit_default",
+              "$pressed_button_texture": "textures/ui/amodal_submit_pressed",
+              "$hover_button_texture": "textures/ui/amodal_submit_hover",
+              "$border_visible": false,
+
+              "$button_text": "#submit_text",
+              
+              "$default_text_color|default": "white",
+              "$hover_text_color|default": "white",
+              "$pressed_text_color|default": "white",
+              "$locked_text_color|default": "white",
+
+              "$font_type": "MinecraftTen",
+              "$button_text_binding_type": "global",
+              "$button_binding_condition": "once",
+    
+              "bindings": [
+                {
+                  "binding_name": "#submit_button_visible",
+                  "binding_name_override": "#visible"
+                }
+              ]
+            }
+          }
+        ]    
+      }
+}

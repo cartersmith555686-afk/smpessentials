@@ -1,0 +1,175 @@
+{
+    "namespace": "community_m",
+    "background": {
+        "type": "image",
+        
+        "$chosen_size|default": [225, 200],
+        "$chosen_texture": [],
+
+        "texture": "$chosen_texture",
+        "size": "$chosen_size"
+    },
+
+    "title_label": {
+        "type": "label",
+        "text": "#title_text",
+        "color": "#title_text_color",
+        "size": [
+            "100%",
+            "100%"
+        ],
+        "anchor_from": "top_middle",
+        "anchor_to": "top_middle",
+        
+        // variables
+        "$title_offset": [],
+        "$text_size|default": 1,
+        "$include_shadow|default": true,
+
+        "font_scale_factor": "$text_size",
+        "font_type": "MinecraftTen",
+        "backup_font_type": "MinecraftTen",
+        "offset": "$title_offset",
+        "shadow": "$include_shadow"
+    },
+
+    "closeB@common.close_button": {
+        "anchor_from": "top_right",
+        "anchor_to": "top_right",
+        "size": [
+            15,
+            15
+        ],
+        "$close_offset": [],
+        "offset": "$close_offset",
+        "sound_name": "random.click",
+        "sound_volume": 1.0,
+        "sound_pitch": 1.0,
+        "$close_button_texture": "textures/ui/g_close_button",
+        "controls": [
+            {
+                "default@common.close_button_panel": {
+                    "type": "image",
+                    "texture": "textures/ui/Black",
+                    "size": [
+                        "100%",
+                        "100%"
+                    ],
+                    "alpha": 0.6
+                }
+            },
+            {
+                "hover@common.close_button_panel": {
+                    "type": "image",
+                    "texture": "textures/ui/Black_hover",
+                    "size": [
+                        "100%",
+                        "100%"
+                    ],
+                    "alpha": 0.6
+                }
+            },
+            {
+                "pressed@common.close_button_panel": {
+                    "type": "image",
+                    "texture": "textures/ui/Black_pressed",
+                    "size": [
+                        "100%",
+                        "100%"
+                    ],
+                    "alpha": 0.6
+                }
+            }
+        ]
+    },
+
+    "c_form_panel@common.scrolling_panel" : {
+        "anchor_to": "top_left",
+        "anchor_from": "top_left",
+        "$show_background": false,
+        "size": [ "90%", "88%" ],
+        "offset": [10, 17],
+        "$scrolling_content": "community_m.ccustom_form_content",
+        "$scroll_size": [ 5, "100% - 4px" ],
+        "$scrolling_pane_size": [ "100% - 4px", "100% - 2px" ],
+        "$scrolling_pane_offset": [ 2, 0 ],
+        "$scroll_bar_right_padding_size": [ 0, 0 ]
+      },
+    
+      "generated_contents": {
+        "type": "stack_panel",
+        "size": ["100%", "100%c"],
+        "orientation": "vertical",
+        "anchor_from": "top_left",
+        "anchor_to": "top_left",
+    
+        "factory":{
+          "name": "buttons",
+          "control_ids": {
+            "label": "@server_form.custom_label",
+            "toggle": "@server_form.custom_toggle",
+            "slider": "@server_form.custom_slider",
+            "step_slider": "@server_form.custom_step_slider",
+            "dropdown": "@server_form.custom_dropdown",
+            "input": "@server_form.custom_input",
+            "header": "@server_form.custom_header",
+            "divider": "@settings_common.option_group_section_divider"
+          }
+        },
+    
+        "collection_name": "custom_form",
+        "bindings": [
+          {
+            "binding_name": "#custom_form_length",
+            "binding_name_override": "#collection_length"
+          }
+        ]
+      },
+    
+      "ccustom_form_content": {
+        "type": "stack_panel",
+        "size": ["100% - 4px", "100%c"],
+        "offset": [2,0],
+        "orientation": "vertical",
+        "anchor_from": "top_left",
+        "anchor_to": "top_left",
+    
+        "controls": [
+          {
+            "generated_form@community_m.generated_contents": {}
+          },
+          {
+            "submit_button@common_buttons.light_text_button": {
+              "$pressed_button_name": "button.submit_custom_form",
+              "anchor_from": "top_left",
+              "anchor_to": "top_left",
+              "size": [ "100%", 32 ],
+
+              "$border_visible": false,
+              "$button_text": "#submit_text",
+              "$button_offset": [0, -2],
+
+              "$default_button_texture": "textures/ui/cm_button_default",
+              "$hover_button_texture": "textures/ui/cm_button_hover",
+              "$pressed_button_texture": "textures/ui/cm_button_pressed",
+
+              "$default_text_color|default": "white",
+              "$hover_text_color|default": "white",
+              "$pressed_text_color|default": "white",
+              "$locked_text_color|default": "white",
+
+              "$font_type": "MinecraftTen",
+              "$button_text_binding_type": "global",
+              "$button_binding_condition": "once",
+    
+              "bindings": [
+                {
+                  "binding_name": "#submit_button_visible",
+                  "binding_name_override": "#visible"
+                }
+              ]
+            }
+          }
+        ]    
+      }
+}
