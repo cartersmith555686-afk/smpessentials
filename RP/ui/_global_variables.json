@@ -1,0 +1,27 @@
+{
+    // Menu title signatures. Each char is §-escaped so the whole token is
+    // invisible in-game; the §❖ prefix namespaces them to Obsidian Essentials
+    // so they will not collide with other add-ons' form titles.
+    // NOTE: these values MUST stay in sync with the titles built in the
+    // scripts (see menuSignatures usage in main_menu.js / changelogs.js / etc).
+    "$admin": "§❖§A§D",
+    "$adminMOBILE": "§❖§A§M",
+    "$adminOG": "§❖§A§O",
+    "$adminm": "§❖§A§X",
+    "$community": "§❖§C§D",
+    "$communityMOBILE": "§❖§C§M",
+    "$communityOG": "§❖§C§O",
+    "$communitym": "§❖§C§X",
+
+    // Sidebar
+    "$sb": "฿",
+    "$smallsb": "℃",
+
+    "$sbRIGHT": "?",
+    "$sbBOTTOM": "@",
+    "$sbTOP": "&",
+    "$sbMIDDLE_BOTTOM": "#",
+    "$sbLEFT": "!"
+    // "$normal": ""
+    // "$default": "'"
+}

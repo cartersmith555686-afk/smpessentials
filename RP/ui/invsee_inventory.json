@@ -1,0 +1,116 @@
+{
+  "namespace": "ds_oe_inventory_viewer",
+
+  "title_label": {
+    "type": "label",
+    "size": [ "default", "default" ],
+    "max_size": [ "default", 16 ],
+    "color": "$title_text_color",
+    "localize": false
+  },
+
+  "inventory_slot_with_armor_icon@common.empty_panel": {
+    "size": [ 18, 18 ],
+    "controls": [
+      {
+        "item_slot@chest.chest_grid_item": {}
+      },
+      {
+        "equipment_icon": {
+          "type": "image",
+          "size": [ 16, 16 ],
+          "texture": "('textures/ui/empty_armor_slot_' + $slot_texture)",
+          "ignored": "$hide_armor_slot",
+          "layer": 3
+        }
+      }
+    ]
+  },
+
+  "viewer_grid_panel": {
+    "type": "stack_panel",
+    "orientation": "vertical",
+    "use_child_anchors": true,
+    "size": [ "100%cm", "100%c" ],
+
+    "controls": [
+      {
+        "main_inventory@chest.large_chest_grid": {
+          "size": [ 162, 54 ],
+          "grid_dimensions": [ 9, 3 ]
+        }
+      },
+      { "spacer_1@common.empty_panel": { "size": [ 162, 4 ] } },
+      {
+        "hotbar_inventory": {
+          "type": "stack_panel",
+          "orientation": "horizontal",
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "size": [ 162, 18 ],
+          "collection_name": "container_items",
+
+          "controls": [
+            { "slot_0@chest.chest_grid_item": { "collection_index": 27 } },
+            { "slot_1@chest.chest_grid_item": { "collection_index": 28 } },
+            { "slot_2@chest.chest_grid_item": { "collection_index": 29 } },
+            { "slot_3@chest.chest_grid_item": { "collection_index": 30 } },
+            { "slot_4@chest.chest_grid_item": { "collection_index": 31 } },
+            { "slot_5@chest.chest_grid_item": { "collection_index": 32 } },
+            { "slot_6@chest.chest_grid_item": { "collection_index": 33 } },
+            { "slot_7@chest.chest_grid_item": { "collection_index": 34 } },
+            { "slot_8@chest.chest_grid_item": { "collection_index": 35 } }
+          ]
+        }
+      },
+      { "spacer_2@common.empty_panel": { "size": [ 1, 10 ] } },
+      {
+        "equipment_inventory": {
+          "type": "stack_panel",
+          "orientation": "horizontal",
+          "size": [ 108, 18 ],
+          "collection_name": "container_items",
+
+          "controls": [
+            {
+              "helmet_slot@ds_oe_inventory_viewer.inventory_slot_with_armor_icon": {
+                "collection_index": 45,
+                "$hide_armor_slot": "(('%.1s' * ($container_name - ('%.16s' * $container_name))) = 'a')",
+                "$slot_texture": "helmet"
+              }
+            },
+            {
+              "chestplate_slot@ds_oe_inventory_viewer.inventory_slot_with_armor_icon": {
+                "collection_index": 46,
+                "$hide_armor_slot": "(('%.1s' * ($container_name - ('%.17s' * $container_name))) = 'a')",
+                "$slot_texture": "chestplate"
+              }
+            },
+            {
+              "leggings_slot@ds_oe_inventory_viewer.inventory_slot_with_armor_icon": {
+                "collection_index": 47,
+                "$hide_armor_slot": "(('%.1s' * ($container_name - ('%.18s' * $container_name))) = 'a')",
+                "$slot_texture": "leggings"
+              }
+            },
+            {
+              "boots_slot@ds_oe_inventory_viewer.inventory_slot_with_armor_icon": {
+                "collection_index": 48,
+                "$hide_armor_slot": "(('%.1s' * ($container_name - ('%.19s' * $container_name))) = 'a')",
+                "$slot_texture": "boots"
+              }
+            },
+            { "spacer@common.empty_panel": { "size": [ 18, 1 ] } },
+            {
+              "offhand_slot@ds_oe_inventory_viewer.inventory_slot_with_armor_icon": {
+                "collection_index": 49,
+                "$hide_armor_slot": "(('%.1s' * ($container_name - ('%.20s' * $container_name))) = 'a')",
+                "$slot_texture": "shield"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

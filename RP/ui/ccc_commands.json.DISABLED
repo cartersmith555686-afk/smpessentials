@@ -1,0 +1,55 @@
+{
+    "namespace": "ccc_commands",
+    "commands@ccc.commands_stack": {
+        "$commands": [
+
+            {
+                "help@ccc.custom_command_item_overview": {
+                    "$command_length": 4,
+                    "$command": "help"
+                }
+            },
+            {
+                "book@ccc.custom_command_item_overview": {
+                    "$command_length": 4,
+                    "$command": "book"
+                }
+            },
+            {
+                "chat@ccc.custom_command_item_overview": {
+                    "$command_length": 4,
+                    "$command": "chat",
+                    "$arg1": "<target:player>"
+                }
+            },
+            {
+                "tpa@ccc.custom_command_item_overview": {
+                    "$command_length": 3,
+                    "$command": "tpa",
+                    "$arg1": "<target:player>"
+                }
+            },
+            {
+                "home@ccc.custom_command_item_overview": {
+                    "$command_length": 4,
+                    "$command": "home",
+                    "$arg1": "<house name>"
+                }
+            }
+            
+           // {
+           // "ban@ccc.custom_command_item_overview": {
+           //         // command length is just the string length of the command for example ban has 3 letters
+           //         "$command_length": 3,
+           //         "$command": "ban",
+           //         "$arg1": "<target:player>",
+           //         "$arg2": "<duration:int>"
+           //     }
+           // }
+            // You can remove the ones above they are just examples
+            // maximum args are 3
+            // change your command prefix in _global_variables
+            // add your commands here 
+        ]
+    }
+}

@@ -1,0 +1,9 @@
+// © BlockPlay
+// All rights reserved
+//You wanna know how it works huh ;)
+{
+    "\u0075\u0069\u005F\u0064\u0065\u0066\u0073": [
+        "ui/commons_ccc.json",
+        "ui/ccc_commands.json"
+    ]
+}

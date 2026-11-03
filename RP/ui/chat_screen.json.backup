@@ -1,0 +1,1656 @@
+{
+	"chat_screen_content": {
+		"modifications": [
+			{
+				"array_name": "controls",
+				"operation": "insert_back",
+				"value": [
+					{
+						"emoji_panel@chat.emoji_panel": {}
+					},
+          {
+						"emoji_panel_exit@chat.emoji_panel_exit": {}
+					},
+					{
+						"emoji_panel_toggle@chat.emoji_panel_toggle": {}
+					}
+				]
+			}
+		]
+	},
+
+	"emoji_panel": {
+		"type": "collection_panel",
+		"size": [145, 186],
+		"anchor_from": "right_middle",
+		"anchor_to": "right_middle",
+		"offset": [-20, 0],
+    "$anims": [
+			"@chat.anim_emoji_panel_alpha_in",
+			"@chat.anim_emoji_panel_offset_in"
+		],
+		"layer": 1,
+		"factory": {
+			"name": "emoji_panel_factory",
+			"control_name": "chat.emoji_panel_background",
+			"max_children_size": 1
+		},
+		"bindings": [
+			{
+				"binding_type": "view",
+				"source_control_name": "emoji_toggle_state",
+				"source_property_name": "#toggle_state",
+				"target_property_name": "#toggle_state"
+			},
+			{
+				"binding_type": "view",
+				"source_property_name": "(1 * #toggle_state)",
+				"target_property_name": "#collection_length"
+			}
+		]
+	},
+
+  "emoji_panel_exit": {
+		"type": "collection_panel",
+		"size": [145, 186],
+		"anchor_from": "right_middle",
+		"anchor_to": "right_middle",
+		"offset": [-20, 0],
+    "$anims": [
+			"@chat.anim_emoji_panel_alpha_out",
+			"@chat.anim_emoji_panel_offset_out"
+		],
+		"layer": 1,
+		"factory": {
+			"name": "emoji_panel_factory",
+			"control_name": "chat.emoji_panel_background",
+			"max_children_size": 1
+		},
+		"bindings": [
+			{
+				"binding_type": "view",
+				"source_control_name": "emoji_toggle_state",
+				"source_property_name": "#toggle_state",
+				"target_property_name": "#toggle_state"
+			},
+			{
+				"binding_type": "view",
+				"source_property_name": "(#toggle_state * -1 + 1)",
+				"target_property_name": "#collection_length"
+			}
+		]
+	},
+
+	"emoji_panel_toggle@chat.emoji_template_toggle": {
+		"anchor_from": "top_right",
+		"anchor_to": "top_right",
+		"offset": [-5, 28],
+    "size": [
+      25,
+      25
+    ],
+    "$button_text": "\uE605",
+    "$toggle_name": "emoji_toggle",
+    "$toggle_view_binding_name": "emoji_toggle_state"
+  },
+
+	"anim_emoji_panel_alpha_in": {
+		"anim_type": "alpha",
+		"easing": "linear",
+		"from": 0,
+		"to": 1,
+		"duration": 0.1
+	},
+
+	"anim_emoji_panel_offset_in": {
+		"anim_type": "offset",
+		"easing": "out_cubic",
+		"from": [200, 0],
+		"to": [0, 0],
+		"duration": 0.15
+	},
+
+  "anim_emoji_panel_alpha_out": {
+		"anim_type": "alpha",
+		"easing": "linear",
+		"from": 1,
+		"to": 0,
+		"duration": 0.1
+	},
+
+	"anim_emoji_panel_offset_out": {
+		"anim_type": "offset",
+		"easing": "in_cubic",
+		"from": [0, 0],
+		"to": [200, 0],
+		"duration": 0.1,
+    "destroy_at_end": "emoji_panel_background"
+	},
+
+  "emoji_template_toggle@common_toggles.light_text_toggle": {
+    "$default_text_color": "$light_toggle_hover_text_color",
+    "$hover_text_color": "$light_toggle_hover_text_color",
+    "$default_checked_text_color": "$light_toggle_hover_text_color",
+    "$hover_checked_text_color": "$light_toggle_hover_text_color",
+    "$default_texture": "textures/chat/emoji_button",
+    "$hover_texture": "textures/chat/emoji_button_pressed",
+    "$pressed_texture": "textures/chat/emoji_button_hover",
+    "$pressed_no_hover_texture": "textures/chat/emoji_button_pressed",
+    "$default_border_visible": false,
+    "$hover_border_visible": false,
+    "$button_text": "\uE605",
+    "$font_size_override|default": "normal",
+    "size": [25, 25],
+    "variables": [
+      {
+        "requires": "$touch",
+        "$font_size_override": "small",
+        "size": [16, 16]
+      }
+    ]
+  },
+
+	"emoji_panel_background": {
+		"type": "image",
+		"layer": 0,
+		"texture": "textures/chat/emoji_panel_background",
+		"$size|default": [145, 186],
+    "variables": [
+      {
+        "requires": "$touch",
+		    "$size": [140, 186]
+      }
+    ],
+    "size": "$size",
+		"anims": "$anims",
+		"propagate_alpha": true,
+		"controls": [
+      {
+        "category_toggle": {
+          "type": "stack_panel",
+          "anchor_from": "left_middle",
+          "anchor_to": "right_middle",
+          "offset": [-5, 10],
+          "size": ["100%cm", "100%c"],
+          "controls": [
+            {
+              "faces@chat.emoji_template_toggle": {
+                "$button_text": "\uE605",
+                "$toggle_name": "emojis_toggle",
+                "$toggle_group_forced_index": 0,
+                "$toggle_view_binding_name": "faces_toggle_state",
+                "$radio_toggle_group": true
+              }
+            },
+            {
+              "hands@chat.emoji_template_toggle": {
+                "$button_text": "\uE690",
+                "$toggle_name": "emojis_toggle",
+                "$toggle_group_forced_index": 1,
+                "$toggle_view_binding_name": "hands_toggle_state",
+                "$radio_toggle_group": true
+              }
+            },
+            {
+              "hearts@chat.emoji_template_toggle": {
+                "$button_text": "\uE6C6",
+                "$toggle_name": "emojis_toggle",
+                "$toggle_group_forced_index": 2,
+                "$toggle_view_binding_name": "hearts_toggle_state",
+                "$radio_toggle_group": true
+              }
+            },
+            {
+              "symbols@chat.emoji_template_toggle": {
+                "$button_text": "\uE66A",
+                "$toggle_name": "emojis_toggle",
+                "$toggle_group_forced_index": 3,
+                "$toggle_view_binding_name": "symbols_toggle_state",
+                "$radio_toggle_group": true
+              }
+            },
+            {
+              "misc@chat.emoji_template_toggle": {
+                "$button_text": "\uE6EA",
+                "$toggle_name": "emojis_toggle",
+                "$toggle_group_forced_index": 4,
+                "$toggle_view_binding_name": "misc_toggle_state",
+                "$radio_toggle_group": true
+              }
+            }
+          ]
+        }
+      },
+			{
+				"title_emoji_panel": {
+					"type": "label",
+					"text": "Emojis",
+					"shadow": true,
+					"anchor_from": "top_middle",
+					"anchor_to": "top_middle",
+					"offset": [0, 7]
+				}
+			},
+			{
+				"emojis_scrolling_panel@common.scrolling_panel": {
+					"anchor_to": "top_middle",
+					"anchor_from": "top_middle",
+					"$show_background": false,
+					"size": [137, 156],
+					"offset": [0, 26],
+
+					"$scroll_box_mouse_image_control": "chat.ore_ui_scrollbar_box_image",
+					"$scrolling_content": "chat.emoji_buttons_panel",
+          "$scroll_box_visible_touch": true,
+          "$scrollbar_always_visible": true,
+          "$scroll_size": [ 5, 149 ],
+          "$scrolling_pane_size": [ 135, 149 ],
+          "$scrolling_pane_offset": [ 2, 4 ],
+          "$scroll_bar_right_padding_size": [ 1, 0 ]
+				}
+			}
+		]
+	},
+
+	"emoji_buttons_panel": {
+		"type": "stack_panel",
+		"size": ["100%cm", "100%c"],
+		"controls": [
+			{
+				"category_0": {
+					"type": "image",
+					"texture": "textures/chat/emoji_button",
+					"size": [126, "100%c + 10px"],
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "faces_toggle_state",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ],
+					"controls": [
+						{
+							"label": {
+								"type": "label",
+								"anchor_from": "left_middle",
+								"anchor_to": "left_middle",
+								"offset": [6, 0],
+                "layer": 10,
+								"text": "Faces",
+								"shadow": true
+							}
+						}
+					]
+				}
+			},
+			{
+				"spacer_0": {
+					"type": "panel",
+					"size": [0, 2],
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "faces_toggle_state",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+				}
+			},
+			{
+				"row_1@chat.emoji_stack_panel_unit": {
+					"$emoji_code_1": "\uE600",
+					"$emoji_code_2": "\uE601",
+					"$emoji_code_3": "\uE602",
+					"$emoji_code_4": "\uE603"
+
+				}
+			},
+			{
+				"row_2@chat.emoji_stack_panel_unit": {
+					"$emoji_code_1": "\uE604",
+					"$emoji_code_2": "\uE605",
+					"$emoji_code_3": "\uE606",
+					"$emoji_code_4": "\uE607"
+				}
+			},
+			{
+				"row_3@chat.emoji_stack_panel_unit": {
+					"$emoji_code_1": "\uE608",
+					"$emoji_code_2": "\uE609",
+					"$emoji_code_3": "\uE60A",
+					"$emoji_code_4": "\uE60B"
+				}
+			},
+			{
+				"row_4@chat.emoji_stack_panel_unit": {
+					"$emoji_code_1": "\uE60C",
+					"$emoji_code_2": "\uE60D",
+					"$emoji_code_3": "\uE60E",
+					"$emoji_code_4": "\uE60F"
+				}
+			},
+			{
+				"row_5@chat.emoji_stack_panel_unit": {
+          "$page_num": "spage_2",
+					"$emoji_code_1": "\uE610",
+					"$emoji_code_2": "\uE611",
+					"$emoji_code_3": "\uE612",
+					"$emoji_code_4": "\uE613"
+				}
+			},
+			{
+				"row_6@chat.emoji_stack_panel_unit": {
+          "$page_num": "spage_2",
+					"$emoji_code_1": "\uE614",
+					"$emoji_code_2": "\uE615",
+					"$emoji_code_3": "\uE616",
+					"$emoji_code_4": "\uE617"
+				}
+			},
+			{
+				"row_7@chat.emoji_stack_panel_unit": {
+          "$page_num": "spage_2",
+					"$emoji_code_1": "\uE618",
+					"$emoji_code_2": "\uE619",
+					"$emoji_code_3": "\uE61A",
+					"$emoji_code_4": "\uE61B"
+				}
+			},
+			{
+				"row_8@chat.emoji_stack_panel_unit": {
+          "$page_num": "spage_2",
+					"$emoji_code_1": "\uE61C",
+					"$emoji_code_2": "\uE61D",
+					"$emoji_code_3": "\uE61E",
+					"$emoji_code_4": "\uE61F"
+				}
+			},
+			{
+				"row_9@chat.emoji_stack_panel_unit": {
+          "$page_num": "spage_3",
+					"$emoji_code_1": "\uE620",
+					"$emoji_code_2": "\uE621",
+					"$emoji_code_3": "\uE622",
+					"$emoji_code_4": "\uE623"
+				}
+			},
+			{
+				"row_10@chat.emoji_stack_panel_unit": {
+          "$page_num": "spage_3",
+					"$emoji_code_1": "\uE624",
+					"$emoji_code_2": "\uE625",
+					"$emoji_code_3": "\uE626",
+					"$emoji_code_4": "\uE627"
+				}
+			},
+			{
+				"row_11@chat.emoji_stack_panel_unit": {
+          "$page_num": "spage_3",
+					"$emoji_code_1": "\uE628",
+					"$emoji_code_2": "\uE629",
+					"$emoji_code_3": "\uE62B",
+					"$emoji_code_4": "\uE62C"
+				}
+			},
+			{
+				"row_12@chat.emoji_stack_panel_unit": {
+          "$page_num": "spage_3",
+					"$emoji_code_1": "\uE62D",
+					"$emoji_code_2": "\uE62E",
+					"$emoji_code_3": "\uE62F",
+					"$emoji_code_4": "\uE630"
+				}
+			},
+			{
+				"row_13@chat.emoji_stack_panel_unit": {
+          "$page_num": "spage_4",
+					"$emoji_code_1": "\uE631",
+					"$emoji_code_2": "\uE632",
+					"$emoji_code_3": "\uE633",
+					"$emoji_code_4": "\uE634"
+				}
+			},
+			{
+				"row_14@chat.emoji_stack_panel_unit": {
+          "$page_num": "spage_4",
+					"$emoji_code_1": "\uE635",
+					"$emoji_code_2": "\uE636",
+					"$emoji_code_3": "\uE637",
+					"$emoji_code_4": "\uE638"
+				}
+			},
+			{
+				"row_15@chat.emoji_stack_panel_unit": {
+          "$page_num": "spage_4",
+					"$emoji_code_1": "\uE639",
+					"$emoji_code_2": "\uE63A",
+					"$emoji_code_3": "\uE63B",
+					"$emoji_code_4": "\uE63C"
+				}
+			},
+			{
+				"row_16@chat.emoji_stack_panel_unit": {
+          "$page_num": "spage_4",
+					"$emoji_code_1": "\uE63D",
+					"$emoji_code_2": "\uE63E",
+					"$emoji_code_3": "\uE63F",
+					"$emoji_code_4": "\uE640"
+				}
+			},
+			{
+				"row_17@chat.emoji_stack_panel_unit": {
+          "$page_num": "spage_5",
+					"$emoji_code_1": "\uE641",
+					"$emoji_code_2": "\uE642",
+					"$emoji_code_3": "\uE658",
+					"$emoji_code_4": "\uE6C1"
+				}
+			},
+			{
+				"row_18@chat.emoji_stack_panel_unit": {
+          "$page_num": "spage_5",
+					"$emoji_code_1": "\uE6C2",
+					"$emoji_code_2": "\uE6DA",
+					"$emoji_code_3": "\uE6F2",
+					"$emoji_code_4": "\uE700"
+				}
+			},
+			{
+				"row_19@chat.emoji_stack_panel_unit": {
+          "$page_num": "spage_5",
+					"$emoji_code_1": "\uE70A",
+					"$emoji_code_2": "\uE723",
+					"$emoji_code_3": "\uE726",
+					"$emoji_code_4": "\uE727"
+				}
+			},
+			{
+				"row_20@chat.emoji_stack_panel_unit": {
+          "$page_num": "spage_5",
+					"$emoji_code_1": "\uE728",
+					"$emoji_code_2": "\uE729",
+					"$emoji_code_3": "\uE72A",
+					"$emoji_code_4": "\uE72B"
+				}
+			},
+			{
+				"row_21@chat.emoji_stack_panel_unit": {
+          "$page_num": "spage_6",
+					"$emoji_code_1": "\uE72C",
+					"$emoji_code_2": "\uE72D",
+					"$emoji_code_3": "\uE72E",
+					"$emoji_code_4": "\uE733"
+				}
+			},
+			{
+				"row_22@chat.emoji_stack_panel_unit": {
+          "$page_num": "spage_6",
+					"$emoji_code_1": "\uE734",
+					"$emoji_code_2": "\uE751",
+					"$emoji_code_3": "\uE752",
+					"$emoji_code_4": "\uE753"
+				}
+			},
+			{
+				"row_23@chat.emoji_stack_panel_unit": {
+          "$page_num": "spage_6",
+					"$emoji_code_1": "\uE754",
+					"$emoji_code_2": "\uE755",
+					"$emoji_code_3": "\uE756",
+					"$emoji_code_4": "\uE757"
+				}
+			},
+			{
+				"row_24@chat.emoji_stack_panel_unit": {
+          "$page_num": "spage_6",
+					"$emoji_code_1": "\uE758",
+					"$emoji_code_2": "\uE759",
+					"$emoji_code_3": "\uE75A",
+					"$emoji_code_4": "\uE75B"
+				}
+			},
+			{
+				"row_25@chat.emoji_stack_panel_unit": {
+          "$page_num": "spage_7",
+					"$emoji_code_1": "\uE75C",
+					"$emoji_code_2": "\uE75D",
+					"$emoji_code_3": "\uE75E",
+					"$emoji_code_4": "\uE75F"
+				}
+			},
+			{
+				"row_26@chat.emoji_stack_panel_unit": {
+          "$page_num": "spage_7",
+					"$emoji_code_1": "\uE760",
+					"$emoji_code_2": "\uE761",
+					"$emoji_code_3": "\uE762",
+					"$emoji_code_4": "\uE763"
+				}
+			},
+			{
+				"row_27@chat.emoji_stack_panel_unit": {
+          "$page_num": "spage_7",
+					"$emoji_code_1": "\uE764",
+					"$emoji_code_2": "\uE765",
+					"$emoji_code_3": "\uE766",
+					"$emoji_code_4": "\uE767"
+				}
+			},
+			{
+				"row_28@chat.emoji_stack_panel_unit": {
+          "$page_num": "spage_7",
+					"$emoji_code_1": "\uE768",
+					"$emoji_code_2": "\uE769",
+					"$emoji_code_3": "\uE76A",
+					"$emoji_code_4": "\uE76B"
+				}
+			},
+			{
+				"row_29@chat.emoji_stack_panel_unit": {
+          "$page_num": "spage_8",
+					"$emoji_code_1": "\uE76C",
+					"$emoji_code_2": "\uE76D",
+					"$emoji_code_3": "\uE76E",
+					"$emoji_code_4": "\uE76F"
+				}
+			},
+			{
+				"row_30@chat.emoji_stack_panel_unit": {
+          "$page_num": "spage_8",
+					"$emoji_code_1": "\uE770",
+					"$emoji_code_2": "\uE771",
+					"$emoji_code_3": "\uE772",
+					"$emoji_code_4": "\uE773"
+				}
+			},
+			{
+				"row_31@chat.emoji_stack_panel_unit": {
+          "$page_num": "spage_8",
+					"$emoji_code_1": "\uE774",
+					"$emoji_code_2": "\uE775",
+					"$emoji_code_3": "\uE776",
+					"$emoji_code_4": "\uE777"
+				}
+			},
+			{
+				"row_32@chat.emoji_stack_panel_unit": {
+          "$page_num": "spage_8",
+					"$emoji_code_1": "\uE778",
+					"$emoji_code_2": "\uE779",
+					"$emoji_code_3": "\uE77A",
+					"$emoji_code_4": "\uE77B"
+				}
+			},
+			{
+				"row_33@chat.emoji_stack_panel_unit_3": {
+          "$page_num": "spage_9",
+					"$emoji_code_1": "\uE77C",
+					"$emoji_code_2": "\uE77D",
+					"$emoji_code_3": "\uE77E"
+				}
+			},
+			{
+				"category_1": {
+					"type": "image",
+					"texture": "textures/chat/emoji_button",
+					"size": [126, "100%c + 10px"],
+					"controls": [
+						{
+							"label": {
+								"type": "label",
+								"anchor_from": "left_middle",
+								"anchor_to": "left_middle",
+								"offset": [6, 0],
+                "layer": 10,
+								"text": "Hand Gestures",
+								"shadow": true
+							}
+						}
+					],
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "hand_gestures_toggle_state",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+				}
+			},
+			{
+				"spacer_2": {
+					"type": "panel",
+					"size": [0, 2],
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "hand_gestures_toggle_state",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+				}
+			},
+			{
+				"row_34@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "hand_gestures_toggle_state",
+          "$page_num": "hand_gestures_toggle_state",
+					"$emoji_code_1": "\uE690",
+					"$emoji_code_2": "\uE691",
+					"$emoji_code_3": "\uE692",
+					"$emoji_code_4": "\uE693"
+				}
+			},
+			{
+				"row_35@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "hand_gestures_toggle_state",
+          "$page_num": "hand_gestures_toggle_state",
+					"$emoji_code_1": "\uE694",
+					"$emoji_code_2": "\uE695",
+					"$emoji_code_3": "\uE696",
+					"$emoji_code_4": "\uE697"
+				}
+			},
+			{
+				"row_36@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "hand_gestures_toggle_state",
+          "$page_num": "hand_gestures_toggle_state",
+					"$emoji_code_1": "\uE698",
+					"$emoji_code_2": "\uE699",
+					"$emoji_code_3": "\uE69A",
+					"$emoji_code_4": "\uE69B"
+				}
+			},
+			{
+				"row_37@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "hand_gestures_toggle_state",
+          "$page_num": "hand_gestures_toggle_state",
+					"$emoji_code_1": "\uE69C",
+					"$emoji_code_2": "\uE69D",
+					"$emoji_code_3": "\uE69E",
+					"$emoji_code_4": "\uE69F"
+				}
+			},
+			{
+				"row_38@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "hand_gestures_toggle_state",
+          "$page_num": "hpage_2",
+					"$emoji_code_1": "\uE6A0",
+					"$emoji_code_2": "\uE6A1",
+					"$emoji_code_3": "\uE6A2",
+					"$emoji_code_4": "\uE6A3"
+				}
+			},
+			{
+				"row_39@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "hand_gestures_toggle_state",
+          "$page_num": "hpage_2",
+					"$emoji_code_1": "\uE6A4",
+					"$emoji_code_2": "\uE6A5",
+					"$emoji_code_3": "\uE6A6",
+					"$emoji_code_4": "\uE6A7"
+				}
+			},
+			{
+				"row_40@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "hand_gestures_toggle_state",
+          "$page_num": "hpage_2",
+					"$emoji_code_1": "\uE6A8",
+					"$emoji_code_2": "\uE6A9",
+					"$emoji_code_3": "\uE6AA",
+					"$emoji_code_4": "\uE6AB"
+				}
+			},
+			{
+				"row_41@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "hand_gestures_toggle_state",
+          "$page_num": "hpage_2",
+					"$emoji_code_1": "\uE6AC",
+					"$emoji_code_2": "\uE6AE",
+					"$emoji_code_3": "\uE6AF",
+					"$emoji_code_4": "\uE6B0"
+				}
+			},
+			{
+				"row_42@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "hand_gestures_toggle_state",
+          "$page_num": "hpage_3",
+					"$emoji_code_1": "\uE6B1",
+					"$emoji_code_2": "\uE6B2",
+					"$emoji_code_3": "\uE6B3",
+					"$emoji_code_4": "\uE6B4"
+				}
+			},
+			{
+				"row_43@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "hand_gestures_toggle_state",
+          "$page_num": "hpage_3",
+					"$emoji_code_1": "\uE6B5",
+					"$emoji_code_2": "\uE6B6",
+					"$emoji_code_3": "\uE6B7",
+					"$emoji_code_4": "\uE6B8"
+				}
+			},
+			{
+				"row_44@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "hand_gestures_toggle_state",
+          "$page_num": "hpage_3",
+					"$emoji_code_1": "\uE6B9",
+					"$emoji_code_2": "\uE6BA",
+					"$emoji_code_3": "\uE6BB",
+					"$emoji_code_4": "\uE6D4"
+				}
+			},
+			{
+				"row_45@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "hand_gestures_toggle_state",
+          "$page_num": "hpage_3",
+					"$emoji_code_1": "\uE6D5",
+					"$emoji_code_2": "\uE6D6",
+					"$emoji_code_3": "\uE6EE",
+					"$emoji_code_4": "\uE6FA"
+				}
+			},
+			{
+				"row_46@chat.emoji_button": {
+          "$category_toggle": "hand_gestures_toggle_state",
+          "$page_num": "hpage_4",
+					"$emoji_code": "\uE74B",
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "hand_gestures_toggle_state",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#category"
+            },
+            {
+              "binding_type": "view",
+              "source_control_name": "hpage_4",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#page"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(#category and (#page or not $touch))",
+              "target_property_name": "#visible"
+            }
+          ]
+				}
+			},
+			{
+				"category_2": {
+					"type": "image",
+					"texture": "textures/chat/emoji_button",
+					"size": [126, "100%c + 10px"],
+					"controls": [
+						{
+							"label": {
+								"type": "label",
+								"anchor_from": "left_middle",
+								"anchor_to": "left_middle",
+								"offset": [6, 0],
+                "layer": 10,
+								"text": "Others",
+								"shadow": true
+							}
+						}
+					],
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "others_toggle_state",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+				}
+			},
+			{
+				"spacer_4": {
+					"type": "panel",
+					"size": [0, 2],
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "others_toggle_state",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+				}
+			},
+			{
+				"row_47@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_1",
+					"$emoji_code_1": "\uE62A",
+					"$emoji_code_2": "\uE643",
+					"$emoji_code_3": "\uE644",
+					"$emoji_code_4": "\uE645"
+				}
+			},
+			{
+				"row_48@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_1",
+					"$emoji_code_1": "\uE646",
+					"$emoji_code_2": "\uE647",
+					"$emoji_code_3": "\uE648",
+					"$emoji_code_4": "\uE649"
+				}
+			},
+			{
+				"row_49@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_1",
+					"$emoji_code_1": "\uE64A",
+					"$emoji_code_2": "\uE64B",
+					"$emoji_code_3": "\uE64C",
+					"$emoji_code_4": "\uE64D"
+				}
+			},
+			{
+				"row_50@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_1",
+					"$emoji_code_1": "\uE64E",
+					"$emoji_code_2": "\uE64F",
+					"$emoji_code_3": "\uE650",
+					"$emoji_code_4": "\uE651"
+				}
+			},
+			{
+				"row_51@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_2",
+					"$emoji_code_1": "\uE652",
+					"$emoji_code_2": "\uE653",
+					"$emoji_code_3": "\uE654",
+					"$emoji_code_4": "\uE655"
+				}
+			},
+			{
+				"row_52@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_2",
+					"$emoji_code_1": "\uE656",
+					"$emoji_code_2": "\uE657",
+					"$emoji_code_3": "\uE659",
+					"$emoji_code_4": "\uE65A"
+				}
+			},
+			{
+				"row_53@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_2",
+					"$emoji_code_1": "\uE65B",
+					"$emoji_code_2": "\uE65C",
+					"$emoji_code_3": "\uE65D",
+					"$emoji_code_4": "\uE65E"
+				}
+			},
+			{
+				"row_54@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_2",
+					"$emoji_code_1": "\uE65F",
+					"$emoji_code_2": "\uE660",
+					"$emoji_code_3": "\uE661",
+					"$emoji_code_4": "\uE662"
+				}
+			},
+			{
+				"row_55@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_3",
+					"$emoji_code_1": "\uE663",
+					"$emoji_code_2": "\uE664",
+					"$emoji_code_3": "\uE665",
+					"$emoji_code_4": "\uE666"
+				}
+			},
+			{
+				"row_56@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_3",
+					"$emoji_code_1": "\uE667",
+					"$emoji_code_2": "\uE668",
+					"$emoji_code_3": "\uE669",
+					"$emoji_code_4": "\uE66A"
+				}
+			},
+			{
+				"row_57@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_3",
+					"$emoji_code_1": "\uE66B",
+					"$emoji_code_2": "\uE66C",
+					"$emoji_code_3": "\uE66D",
+					"$emoji_code_4": "\uE66E"
+				}
+			},
+			{
+				"row_58@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_3",
+					"$emoji_code_1": "\uE66F",
+					"$emoji_code_2": "\uE670",
+					"$emoji_code_3": "\uE671",
+					"$emoji_code_4": "\uE672"
+				}
+			},
+			{
+				"row_59@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_4",
+					"$emoji_code_1": "\uE673",
+					"$emoji_code_2": "\uE674",
+					"$emoji_code_3": "\uE675",
+					"$emoji_code_4": "\uE676"
+				}
+			},
+			{
+				"row_60@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_4",
+					"$emoji_code_1": "\uE677",
+					"$emoji_code_2": "\uE678",
+					"$emoji_code_3": "\uE679",
+					"$emoji_code_4": "\uE67A"
+				}
+			},
+			{
+				"row_61@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_4",
+					"$emoji_code_1": "\uE67B",
+					"$emoji_code_2": "\uE67C",
+					"$emoji_code_3": "\uE67D",
+					"$emoji_code_4": "\uE67E"
+				}
+			},
+			{
+				"row_62@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_4",
+					"$emoji_code_1": "\uE67F",
+					"$emoji_code_2": "\uE680",
+					"$emoji_code_3": "\uE681",
+					"$emoji_code_4": "\uE682"
+				}
+			},
+			{
+				"row_63@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_5",
+					"$emoji_code_1": "\uE683",
+					"$emoji_code_2": "\uE684",
+					"$emoji_code_3": "\uE685",
+					"$emoji_code_4": "\uE686"
+				}
+			},
+			{
+				"row_64@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_5",
+					"$emoji_code_1": "\uE687",
+					"$emoji_code_2": "\uE688",
+					"$emoji_code_3": "\uE689",
+					"$emoji_code_4": "\uE68A"
+				}
+			},
+			{
+				"row_65@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_5",
+					"$emoji_code_1": "\uE68B",
+					"$emoji_code_2": "\uE68C",
+					"$emoji_code_3": "\uE68D",
+					"$emoji_code_4": "\uE68E"
+				}
+			},
+			{
+				"row_66@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_5",
+					"$emoji_code_1": "\uE68F",
+					"$emoji_code_2": "\uE6AD",
+					"$emoji_code_3": "\uE6BC",
+					"$emoji_code_4": "\uE6BD"
+				}
+			},
+			{
+				"row_67@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_6",
+					"$emoji_code_1": "\uE6BE",
+					"$emoji_code_2": "\uE6BF",
+					"$emoji_code_3": "\uE6C0",
+					"$emoji_code_4": "\uE6C3"
+				}
+			},
+			{
+				"row_68@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_6",
+					"$emoji_code_1": "\uE6C4",
+					"$emoji_code_2": "\uE6C5",
+					"$emoji_code_3": "\uE6C6",
+					"$emoji_code_4": "\uE6C7"
+				}
+			},
+			{
+				"row_69@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_6",
+					"$emoji_code_1": "\uE6C8",
+					"$emoji_code_2": "\uE6C9",
+					"$emoji_code_3": "\uE6CA",
+					"$emoji_code_4": "\uE6CB"
+				}
+			},
+			{
+				"row_70@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_6",
+					"$emoji_code_1": "\uE6CC",
+					"$emoji_code_2": "\uE6CD",
+					"$emoji_code_3": "\uE6CE",
+					"$emoji_code_4": "\uE6CF"
+				}
+			},
+			{
+				"row_71@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_7",
+					"$emoji_code_1": "\uE6D0",
+					"$emoji_code_2": "\uE6D1",
+					"$emoji_code_3": "\uE6D2",
+					"$emoji_code_4": "\uE6D3"
+				}
+			},
+			{
+				"row_72@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_7",
+					"$emoji_code_1": "\uE6D7",
+					"$emoji_code_2": "\uE6D8",
+					"$emoji_code_3": "\uE6D9",
+					"$emoji_code_4": "\uE6DB"
+				}
+			},
+			{
+				"row_73@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_7",
+					"$emoji_code_1": "\uE6DC",
+					"$emoji_code_2": "\uE6DD",
+					"$emoji_code_3": "\uE6DE",
+					"$emoji_code_4": "\uE6DF"
+				}
+			},
+			{
+				"row_74@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_7",
+					"$emoji_code_1": "\uE6E0",
+					"$emoji_code_2": "\uE6E1",
+					"$emoji_code_3": "\uE6E2",
+					"$emoji_code_4": "\uE6E3"
+				}
+			},
+			{
+				"row_75@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_8",
+					"$emoji_code_1": "\uE6E4",
+					"$emoji_code_2": "\uE6E5",
+					"$emoji_code_3": "\uE6E6",
+					"$emoji_code_4": "\uE6E7"
+				}
+			},
+			{
+				"row_76@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_8",
+					"$emoji_code_1": "\uE6E8",
+					"$emoji_code_2": "\uE6E9",
+					"$emoji_code_3": "\uE6EA",
+					"$emoji_code_4": "\uE6EB"
+				}
+			},
+			{
+				"row_77@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_8",
+					"$emoji_code_1": "\uE6EC",
+					"$emoji_code_2": "\uE6ED",
+					"$emoji_code_3": "\uE6EF",
+					"$emoji_code_4": "\uE6F0"
+				}
+			},
+			{
+				"row_78@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_8",
+					"$emoji_code_1": "\uE6F1",
+					"$emoji_code_2": "\uE6F3",
+					"$emoji_code_3": "\uE6F4",
+					"$emoji_code_4": "\uE6F5"
+				}
+			},
+			{
+				"row_79@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_9",
+					"$emoji_code_1": "\uE6F6",
+					"$emoji_code_2": "\uE6F7",
+					"$emoji_code_3": "\uE6F8",
+					"$emoji_code_4": "\uE6F9"
+				}
+			},
+			{
+				"row_80@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_9",
+					"$emoji_code_1": "\uE6FB",
+					"$emoji_code_2": "\uE6FC",
+					"$emoji_code_3": "\uE6FD",
+					"$emoji_code_4": "\uE6FE"
+				}
+			},
+			{
+				"row_81@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_9",
+					"$emoji_code_1": "\uE6FF",
+					"$emoji_code_2": "\uE730",
+					"$emoji_code_3": "\uE701",
+					"$emoji_code_4": "\uE702"
+				}
+			},
+			{
+				"row_82@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_9",
+					"$emoji_code_1": "\uE703",
+					"$emoji_code_2": "\uE704",
+					"$emoji_code_3": "\uE705",
+					"$emoji_code_4": "\uE706"
+				}
+			},
+			{
+				"row_83@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_10",
+					"$emoji_code_1": "\uE707",
+					"$emoji_code_2": "\uE708",
+					"$emoji_code_3": "\uE709",
+					"$emoji_code_4": "\uE70B"
+				}
+			},
+			{
+				"row_84@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_10",
+					"$emoji_code_1": "\uE70C",
+					"$emoji_code_2": "\uE70D",
+					"$emoji_code_3": "\uE70E",
+					"$emoji_code_4": "\uE70F"
+				}
+			},
+			{
+				"row_85@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_10",
+					"$emoji_code_1": "\uE710",
+					"$emoji_code_2": "\uE711",
+					"$emoji_code_3": "\uE712",
+					"$emoji_code_4": "\uE713"
+				}
+			},
+			{
+				"row_86@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_10",
+					"$emoji_code_1": "\uE714",
+					"$emoji_code_2": "\uE715",
+					"$emoji_code_3": "\uE716",
+					"$emoji_code_4": "\uE717"
+				}
+			},
+			{
+				"row_87@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_11",
+					"$emoji_code_1": "\uE718",
+					"$emoji_code_2": "\uE719",
+					"$emoji_code_3": "\uE71A",
+					"$emoji_code_4": "\uE71B"
+				}
+			},
+			{
+				"row_88@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_11",
+					"$emoji_code_1": "\uE71C",
+					"$emoji_code_2": "\uE71D",
+					"$emoji_code_3": "\uE71E",
+					"$emoji_code_4": "\uE71F"
+				}
+			},
+			{
+				"row_89@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_11",
+					"$emoji_code_1": "\uE720",
+					"$emoji_code_2": "\uE721",
+					"$emoji_code_3": "\uE722",
+					"$emoji_code_4": "\uE724"
+				}
+			},
+			{
+				"row_90@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_11",
+					"$emoji_code_1": "\uE725",
+					"$emoji_code_2": "\uE72F",
+					"$emoji_code_3": "\uE731",
+					"$emoji_code_4": "\uE732"
+				}
+			},
+			{
+				"row_91@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_12",
+					"$emoji_code_1": "\uE735",
+					"$emoji_code_2": "\uE736",
+					"$emoji_code_3": "\uE737",
+					"$emoji_code_4": "\uE738"
+				}
+			},
+			{
+				"row_92@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_12",
+					"$emoji_code_1": "\uE739",
+					"$emoji_code_2": "\uE73A",
+					"$emoji_code_3": "\uE73B",
+					"$emoji_code_4": "\uE73C"
+				}
+			},
+			{
+				"row_93@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_12",
+					"$emoji_code_1": "\uE73D",
+					"$emoji_code_2": "\uE73E",
+					"$emoji_code_3": "\uE73F",
+					"$emoji_code_4": "\uE740"
+				}
+			},
+			{
+				"row_94@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_12",
+					"$emoji_code_1": "\uE741",
+					"$emoji_code_2": "\uE742",
+					"$emoji_code_3": "\uE743",
+					"$emoji_code_4": "\uE744"
+				}
+			},
+			{
+				"row_95@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_13",
+					"$emoji_code_1": "\uE745",
+					"$emoji_code_2": "\uE746",
+					"$emoji_code_3": "\uE747",
+					"$emoji_code_4": "\uE748"
+				}
+			},
+			{
+				"row_96@chat.emoji_stack_panel_unit": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_13",
+					"$emoji_code_1": "\uE749",
+					"$emoji_code_2": "\uE74A",
+					"$emoji_code_3": "\uE74C",
+					"$emoji_code_4": "\uE74D"
+				}
+			},
+			{
+				"row_97@chat.emoji_stack_panel_unit_3": {
+          "$category_toggle": "others_toggle_state",
+          "$page_num": "opage_13",
+					"$emoji_code_1": "\uE74E",
+					"$emoji_code_2": "\uE74F",
+					"$emoji_code_3": "\uE750"
+				}
+			},
+			{
+				"button_extra@chat.emoji_button": {
+					"$emoji_code": "\uE600",
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "others_toggle_state",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#category"
+            },
+            {
+              "binding_type": "view",
+              "source_control_name": "opage_3",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#page"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(#category and (#page or not $touch))",
+              "target_property_name": "#visible"
+            }
+          ]
+				}
+			},
+			{
+				"spacer_end": {
+					"type": "panel",
+					"size": [0, 1]
+				}
+			}
+		]
+	},
+	
+	"ore_ui_scrollbar_box_image": {
+		"type": "image",
+		"texture": "textures/chat/ore_ui_ScrollHandle",
+		"size": [ 5, "100%" ],
+		"layer": 4
+	},
+
+	"ore_ui_touch_scrollbar_box_image": {
+		"type": "image",
+		"texture": "textures/chat/ore_ui_touchScrollBox",
+		"layer": 3,
+		"alpha": "@common.anim_scrollbar_box_fadeout"
+	},
+
+	"emoji_stack_panel_unit": { //contains 4 emoji buttons
+		"$emoji_code_1|default": "\uEF00", //for button_1
+		"$emoji_code_2|default": "\uEF01", //for button_2
+		"$emoji_code_3|default": "\uEF02", //for button_3
+		"$emoji_code_4|default": "\uEF03", //for button_4
+    "$category_toggle|default": "smileys_toggle_state",
+    "$page_num|default": "spage_1",
+		"type": "stack_panel",
+		"size": ["100%c", "100%cm + 2px"],
+		"orientation": "horizontal",
+		"controls": [
+			{
+				"button_1@chat.emoji_button": {
+					"$emoji_code": "$emoji_code_1"
+				}
+			},
+			{
+				"spacer_0": {
+					"type": "panel",
+					"size": [2, 0]
+				}
+			},
+			{
+				"button_2@chat.emoji_button": {
+					"$emoji_code": "$emoji_code_2"
+				}
+			},
+			{
+				"spacer_1": {
+					"type": "panel",
+					"size": [2, 0]
+				}
+			},
+			{
+				"button_3@chat.emoji_button": {
+					"$emoji_code": "$emoji_code_3"
+				}
+			},
+			{
+				"spacer_2": {
+					"type": "panel",
+					"size": [2, 0]
+				}
+			},
+			{
+				"button_4@chat.emoji_button": {
+					"$emoji_code": "$emoji_code_4"
+				}
+			}
+		],
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "$category_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#category"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "$page_num",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#page"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#category and (#page or not $touch))",
+        "target_property_name": "#visible"
+      }
+    ]
+	},
+
+	"emoji_stack_panel_unit_3": { //contains 3 emoji buttons
+		"$emoji_code_1|default": "\uEF00", //for button_1
+		"$emoji_code_2|default": "\uEF01", //for button_2
+		"$emoji_code_3|default": "\uEF02", //for button_3
+    "$category_toggle|default": "smileys_toggle_state",
+    "$page_num|default": "spage_1",
+		"type": "stack_panel",
+		"size": ["100%c", "100%cm + 2px"],
+		"orientation": "horizontal",
+		"controls": [
+			{
+				"button_1@chat.emoji_button": {
+					"$emoji_code": "$emoji_code_1"
+				}
+			},
+			{
+				"spacer_0": {
+					"type": "panel",
+					"size": [2, 0]
+				}
+			},
+			{
+				"button_2@chat.emoji_button": {
+					"$emoji_code": "$emoji_code_2"
+				}
+			},
+			{
+				"spacer_1": {
+					"type": "panel",
+					"size": [2, 0]
+				}
+			},
+			{
+				"button_3@chat.emoji_button": {
+					"$emoji_code": "$emoji_code_3"
+				}
+			}
+		],
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "$category_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#category"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "$page_num",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#page"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#category and (#page or not $touch))",
+        "target_property_name": "#visible"
+      }
+    ]
+	},
+
+	"emoji_button_content": {
+		"type": "label",
+		"text": "$emoji_code",
+		"layer": 1,
+		"font_size": "medium"
+	},
+
+	"emoji_button@common.button": {
+		"$emoji_code|default": "\uEF00",
+		"$pressed_button_name": "",
+    "$default_button_texture": "textures/chat/emoji_button",
+    "$hover_button_texture": "textures/chat/emoji_button_hover",
+    "$pressed_button_texture": "textures/chat/emoji_button_pressed",
+		"size": [30, 30],
+		"controls": [
+			{
+				"emoji_button_content@chat.emoji_button_content": {}
+			},
+			{
+        "default": {
+					"type": "image",
+					"texture": "$default_button_texture"
+        }
+      },
+      {
+        "hover": {
+					"type": "image",
+					"texture": "$hover_button_texture"
+        }
+      },
+      {
+        "pressed": {
+					"type": "image",
+					"texture": "$pressed_button_texture"
+        }
+      },
+			{
+				"text_edit_box": {
+					"type": "edit_box",
+					"text_box_name": "#message_text_box",
+					"max_length": 2147483647,
+					"can_be_deselected": true,
+					"text_control": "text_control",
+					"always_listening": true,
+					"focus_enabled": true,
+					"size": [
+						"100%sm",
+						"100%sm"
+					],
+					"offset": [
+						2,
+						0
+					],
+          "$button_mappings|default": [
+            {
+              "from_button_id": "button.menu_select",
+              "to_button_id": "button.keyboard_toggle",
+              "handle_select": true,
+              "handle_deselect": false,
+              "mapping_type": "pressed"
+            },
+            {
+              "from_button_id": "button.menu_select",
+              "to_button_id": "button.text_edit_box_selected",
+              "handle_select": false,
+              "handle_deselect": true,
+              "mapping_type": "pressed"
+            },
+            {
+              "from_button_id": "button.menu_cancel",
+              "to_button_id": "button.menu_select",
+              "handle_select": false,
+              "handle_deselect": true,
+              "mapping_type": "global"
+            }
+          ],
+          "variables": [
+            {
+              "requires": "$touch",
+              "$button_mappings": [
+                {
+                  "from_button_id": "button.menu_select",
+                  "to_button_id": "button.keyboard_toggle",
+                  "handle_select": true,
+                  "handle_deselect": false,
+                  "mapping_type": "pressed"
+                },
+                {
+                  "from_button_id": "button.menu_select",
+                  "to_button_id": "button.text_edit_box_selected",
+                  "handle_select": false,
+                  "handle_deselect": true,
+                  "mapping_type": "pressed"
+                },
+                {
+                  "from_button_id": "button.menu_ok",
+                  "to_button_id": "button.text_edit_box_selected",
+                  "handle_select": false,
+                  "handle_deselect": true,
+                  "mapping_type": "pressed"
+                },
+                {
+                  "from_button_id": "button.menu_cancel",
+                  "to_button_id": "button.menu_select",
+                  "handle_select": false,
+                  "handle_deselect": true,
+                  "mapping_type": "global"
+                }
+              ]
+            }
+          ],
+					"layer": 3,
+					"anchor_from": "top_left",
+					"anchor_to": "top_left",
+					"button_mappings": "$button_mappings",
+					"controls": [
+						{
+							"text_control": {
+								"type": "label",
+								"layer": 9,
+								"text": "#item_name",
+								"visible": false,
+								"property_bag": {
+									"#property_field": "#item_name"
+								},
+								"localize": false,
+								"bindings": [
+									{
+										"binding_type": "view",
+										"source_control_name": "display_text",
+										"source_property_name": "#item_name",
+										"target_property_name": "#current_input_text"
+									},
+									{
+										"binding_type": "view",
+										"source_property_name": "(#current_input_text + $emoji_code)",
+										"target_property_name": "#item_name"
+									}
+								]
+							}
+						}
+					]
+				}
+			}
+		]
+	}
+}

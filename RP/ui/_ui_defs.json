@@ -1,0 +1,15 @@
+
+{
+    "ui_defs": [
+        "ui/forms/admin.json",
+        "ui/forms/admin_modal.json",
+        "ui/forms/community.json",
+        "ui/forms/community_modal.json",
+        "ui/forms/credits.json",
+        "ui/forms/changelogs.json",
+        "ui/forms/daily_rewards.json",
+        "ui/invsee_inventory.json",
+        "ui/chest_screen.json",
+        "ui/pocket_containers.json"
+    ]
+}
