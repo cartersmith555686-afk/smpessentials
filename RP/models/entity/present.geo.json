@@ -1,0 +1,106 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.gift",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [
+					0,
+					0.75,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "present",
+					"pivot": [
+						0,
+						15,
+						-1
+					],
+					"cubes": [
+						{
+							"origin": [
+								-4,
+								8,
+								-5
+							],
+							"size": [
+								8,
+								8,
+								8
+							],
+							"inflate": 0.4,
+							"uv": [
+								0,
+								16
+							]
+						},
+						{
+							"origin": [
+								-4,
+								16,
+								-1
+							],
+							"size": [
+								8,
+								4,
+								0
+							],
+							"uv": [
+								24,
+								3
+							]
+						},
+						{
+							"origin": [
+								-4,
+								16,
+								-1
+							],
+							"size": [
+								8,
+								4,
+								0
+							],
+							"pivot": [
+								0,
+								16,
+								-1
+							],
+							"rotation": [
+								0,
+								-90,
+								0
+							],
+							"uv": [
+								24,
+								3
+							]
+						},
+						{
+							"origin": [
+								-4,
+								8,
+								-5
+							],
+							"size": [
+								8,
+								8,
+								8
+							],
+							"uv": [
+								0,
+								0
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}
