@@ -1,0 +1,15 @@
+pack.name=§uObsidian §gEssentials §r[§dBETA§r] RP
+pack.description=The best Realm Essentials!
+item.idk:admin_panel.name=Admin Panel
+item.idk:community_panel.name=Community Panel
+item.spawn_egg.entity.idk:spawn_protection.name=Spawn SPAWN PROTECTION ENTITY
+entity.idk:spawn_protection.name=SPAWN PROTECTION ENTITY
+item.spawn_egg.entity.realm:gift.name=Spawn Gift
+entity.realm:gift.name=Gift
+item.spawn_egg.entity.realm:floating_text.name=Spawn floating_text (your not supposed to have this)
+entity.realm:floating_text.name=floating_text (your not supposed to have this)
+item.spawn_egg.entity.realm:boss_test.name=Spawn Testing (you done need th
+entity.realm:boss_test.name=Testing (you done need th
+entity.ds_oe:hologram.name=Hologram
+container.chest=Chest
+container.enderchest=Ender Chest
