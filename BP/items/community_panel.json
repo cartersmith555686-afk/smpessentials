@@ -1,0 +1,22 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:item": {
+		"description": {
+			"identifier": "idk:community_panel",
+			"menu_category": {
+				"category": "nature"
+			}
+		},
+		"components": {
+            "minecraft:display_name": {
+				"value": "Community Panel"
+			},
+			"minecraft:icon": "idk_community_panel",
+			"minecraft:max_stack_size": 1,
+			"minecraft:cooldown": {
+				"category": "community_panel",
+				"duration": 0.25
+			}
+		}
+	}
+}
