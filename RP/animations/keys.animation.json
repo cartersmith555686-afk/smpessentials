@@ -1,0 +1,23 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.keys.first_person": {
+			"loop": true,
+			"bones": {
+				"group": {
+					"rotation": [0, -27.5, -40],
+					"position": [-4.74109, 12.35153, 0.86037]
+				}
+			}
+		},
+		"animation.keys.third_person": {
+			"loop": true,
+			"bones": {
+				"group": {
+					"rotation": [-90, -20, 90],
+					"position": [0, 13.16856, -2.77554]
+				}
+			}
+		}
+	}
+}

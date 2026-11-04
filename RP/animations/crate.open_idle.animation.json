@@ -1,0 +1,49 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.common_crate.open_idle": {
+			"loop": true,
+			"animation_length": 5.0833,
+			"bones": {
+				"top": {
+					"rotation": [-135, 0, 0]
+				},
+				"glow": {
+					"position": {
+						"0.0": {
+							"post": [0, -1, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [0, 3, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"2.0": {
+							"post": [0, 1, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"3.0": {
+							"post": [0, 3, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"4.0": {
+							"post": [0, 1, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"5.0": {
+							"post": [0, 3, 0],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"crate": {
+					"rotation": [0, 0, 0],
+					"position": [0, 0, 0]
+				},
+				"upper": {
+					"rotation": [-110, 0, 0]
+				}
+			}
+		}
+	}
+}

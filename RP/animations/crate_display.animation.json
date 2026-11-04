@@ -1,0 +1,163 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.crate_display.display_type_items": {
+			"loop": "hold_on_last_frame",
+			"bones": {
+				"rightItem": {
+					"rotation": [-254.71325, 11.21043, -165.09916],
+					"position": [1.05, 2.075, -9.75],
+					"scale": 1
+				}
+			}
+		},
+		"animation.crate_display.display_type_amethyst": {
+			"loop": "hold_on_last_frame",
+			"bones": {
+				"rightItem": {
+					"rotation": [-254.71325, 11.21043, -165.09916],
+					"position": [3.05, 3, -11.25],
+					"scale": 1
+				}
+			}
+		},
+		"animation.crate_display.display_type_amethyst_2": {
+			"loop": "hold_on_last_frame",
+			"bones": {
+				"rightItem": {
+					"rotation": [-254.71325, 11.21043, -165.09916],
+					"position": [2.05, 2.5, -10.25],
+					"scale": 1
+				}
+			}
+		},
+		"animation.crate_display.display_type_equippables": {
+			"loop": "hold_on_last_frame",
+			"bones": {
+				"rightItem": {
+					"rotation": [-277.64581, 83.70514, -153.28572],
+					"position": [-1.4, 4.6, -8.05],
+					"scale": [1, 0.6, 0.6]
+				}
+			}
+		},
+		"animation.crate_display.display_type_trident": {
+			"loop": "hold_on_last_frame",
+			"bones": {
+				"rightItem": {
+					"rotation": [-641.22821, -44.07507, -146.19306],
+					"position": [-0.4, 7.6, -9.05],
+					"scale": [0.4, 0.4, 0.3]
+				}
+			}
+		},
+		"animation.crate_display.display_type_pointed_dripstone": {
+			"loop": "hold_on_last_frame",
+			"bones": {
+				"rightItem": {
+					"rotation": [-242.62719, 84.51152, -153.18724],
+					"position": [2.6, 4.6, -8.45]
+				}
+			}
+		},
+		"animation.crate_display.display_type_blocks": {
+			"loop": "hold_on_last_frame",
+			"bones": {
+				"rightItem": {
+					"rotation": [-19.28456, 44.91561, 0.61155],
+					"position": [4.1, 9.1, -2.75],
+					"scale": 1
+				}
+			}
+		},
+		"animation.crate_display.display_type_golem_statue": {
+			"loop": "hold_on_last_frame",
+			"bones": {
+				"rightItem": {
+					"rotation": [-255.49578, 15.76481, -190.86075],
+					"position": [2.6, 5.1, -9.75],
+					"scale": 1
+				}
+			}
+		},
+		"animation.crate_display.display_type_rods": {
+			"loop": "hold_on_last_frame",
+			"bones": {
+				"rightItem": {
+					"rotation": [-75.7989, 30.85925, -5.20795],
+					"position": [2.3, 4.5, -4.75]
+				}
+			}
+		},
+		"animation.crate_display.display_type_heads": {
+			"loop": "hold_on_last_frame",
+			"bones": {
+				"rightItem": {
+					"rotation": [-19.28456, 44.91561, 0.61155],
+					"position": [3.85, 9.6, -1.75],
+					"scale": 1.5
+				}
+			}
+		},
+		"animation.crate_display.display_type_banners": {
+			"loop": "hold_on_last_frame",
+			"bones": {
+				"rightItem": {
+					"rotation": [-74.94502, -10.91131, 9.896],
+					"position": [-2.6, 3.4, -5.7],
+					"scale": 1
+				}
+			}
+		},
+		"animation.crate_display.display_type_heavy_core": {
+			"loop": "hold_on_last_frame",
+			"bones": {
+				"rightItem": {
+					"rotation": [-19.28456, 44.91561, 0.61155],
+					"position": [0.8, 9, -2.25],
+					"scale": 1
+				}
+			}
+		},
+		"animation.crate_display.display_type_conduit": {
+			"loop": "hold_on_last_frame",
+			"bones": {
+				"rightItem": {
+					"rotation": [-19.28456, 44.91561, 0.61155],
+					"position": [6.3, 12, 3.75],
+					"scale": 2.5
+				}
+			}
+		},
+		"animation.crate_display.display_type_buttons": {
+			"loop": "hold_on_last_frame",
+			"bones": {
+				"rightItem": {
+					"rotation": [-109.71636, 0.43306, -44.91724],
+					"position": [1.3, 4.5, -6.75],
+					"scale": 1
+				}
+			}
+		},
+		"animation.crate_display.display_type_fences": {
+			"loop": "hold_on_last_frame",
+			"bones": {
+				"rightItem": {
+					"rotation": [159.84933, 45.08112, 179.38668],
+					"position": [4.3, 9.5, -12.45],
+					"scale": 1
+				}
+			}
+		},
+		"animation.crate_display.display_type_walls": {
+			"loop": "hold_on_last_frame",
+			"bones": {
+				"rightItem": {
+					"rotation": [159.84933, 45.08112, 179.38668],
+					"position": [7.3, 6.7, -8.45],
+					"scale": 1
+				}
+			}
+		}
+	}
+}

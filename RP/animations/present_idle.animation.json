@@ -1,0 +1,42 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.present_idle": {
+			"loop": true,
+			"animation_length": 2.5417,
+			"bones": {
+				"present": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"2.5": [
+							0,
+							360,
+							0
+						]
+					},
+					"position": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"1.3333": [
+							0,
+							-3,
+							0
+						],
+						"2.5": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			}
+		}
+	}
+}

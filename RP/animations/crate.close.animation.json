@@ -1,0 +1,49 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.common_crate.close": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.5833,
+			"bones": {
+				"crate": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.3333": [15, 0, 0],
+						"0.5833": [0, 0, 0]
+					},
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.3333": [0, 0.6, -1],
+						"0.5833": [0, 0, 0]
+					}
+				},
+				"top": {
+					"rotation": {
+						"0.0": [-135, 0, 0],
+						"0.4167": [0, 0, 0]
+					}
+				},
+				"glow": {
+					"position": {
+						"0.0": {
+							"post": [0, 3, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.4167": {
+							"post": [0, -1, 0],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"upper": {
+					"rotation": {
+						"0.0": [-110, 0, 0],
+						"0.3333": [0, 0, 0],
+						"0.4167": [-2.5, 0, 0],
+						"0.5": [0, 0, 0]
+					}
+				}
+			}
+		}
+	}
+}
