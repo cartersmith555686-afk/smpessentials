@@ -1,0 +1,36 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:attachable": {
+        "description": {
+            "identifier": "idk:admin_panel",
+            "materials": {
+                "default": "entity_alphatest",
+                "enchanted": "entity_alphatest_glint"
+            },
+            "textures": {
+                "default": "textures/items/grimoires/chaos_grimoire_texture",
+                "enchanted": "textures/misc/enchanted_item_glint"
+            },
+            "geometry": {
+                "default": "geometry.admin_panel"
+            },
+            "animations": {
+                "controller": "controller.animation.panel",
+                "idle_first": "animation.panel.first_person",
+                "idle_third": "animation.panel.third_person",
+                "open_first": "animation.panel.first_person.open",
+                "open_third": "animation.panel.third_person.open",
+                "close_first": "animation.panel.first_person.close",
+                "close_third": "animation.panel.third_person.close"
+            },
+            "scripts": {
+                "animate": [
+                    { "idle_first": "c.is_first_person" },
+                    { "idle_third": "!c.is_first_person" },
+                    "controller"
+                ]
+            },
+            "render_controllers": ["controller.render.item_default"]
+        }
+    }
+}
