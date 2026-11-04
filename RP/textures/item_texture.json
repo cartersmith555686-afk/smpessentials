@@ -1,0 +1,39 @@
+{
+	"resource_pack_name": "enderio",
+	"texture_name": "atlas.items",
+	"texture_data": {
+		"idk_admin_panel": {
+			"textures": "textures/items/grimoires/chaos_grimoire_icon"
+		},
+		"idk_community_panel": {
+			"textures": "textures/items/grimoires/community_panel_icon"
+		},
+		"idk_money": {
+			"textures": "textures/items/money"
+		},
+		"idk_crate_key": {
+			"textures": "textures/items/crate_key"
+		},
+		"oe_common_key": {
+			"textures": "textures/items/key_icons/common_key"
+		},
+		"oe_uncommon_key": {
+			"textures": "textures/items/key_icons/uncommon_key"
+		},
+		"oe_rare_key": {
+			"textures": "textures/items/key_icons/rare_key"
+		},
+		"oe_epic_key": {
+			"textures": "textures/items/key_icons/epic_key"
+		},
+		"oe_legendary_key": {
+			"textures": "textures/items/key_icons/legendary_key"
+		},
+		"oe_mythic_key": {
+			"textures": "textures/items/key_icons/mythic_key"
+		},
+		"ender_chest": {
+			"textures": "textures/items/server"
+		}
+	}
+}
