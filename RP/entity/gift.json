@@ -1,0 +1,32 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "realm:gift",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/present_texture"
+			},
+			"geometry": {
+				"default": "geometry.gift"
+			},
+			"render_controllers": [
+				"controller.render.gift"
+			],
+			"spawn_egg": {
+				"base_color": "#000000",
+				"overlay_color": "#FFFFFF"
+			},
+			"animations": {
+				"idle": "animation.present_idle"
+			},
+			"scripts": {
+				"animate": [
+					"idle"
+				]
+			}
+		}
+	}
+}

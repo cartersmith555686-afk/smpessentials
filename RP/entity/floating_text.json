@@ -1,0 +1,22 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "realm:floating_text",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/empty"
+			},
+			"render_controllers": [
+				"controller.render.oe_floating_text"
+			],
+			"geometry": {
+				"default": "geometry.oe_floating_text"
+			},
+			"scripts": {
+			}
+		}
+	}
+}

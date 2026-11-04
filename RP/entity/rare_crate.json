@@ -1,0 +1,36 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "realm:rare_crate",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/rare_crate_texture"
+			},
+			"geometry": {
+				"default": "geometry.rare_crate"
+			},
+			"render_controllers": [
+				"controller.render.common_crate"
+			],
+			"scripts": {
+				"animate": [
+					"controller"
+				]
+			},
+			"animations": {
+				"controller": "controller.animation.common_crate",
+				"idle": "animation.common_crate.idle",
+				"open": "animation.common_crate.open",
+				"open_idle": "animation.common_crate.open_idle",
+				"close": "animation.common_crate.close"
+			},
+			"spawn_egg": {
+				"base_color": "#1E3A5C",
+				"overlay_color": "#2F81F7"
+			}
+		}
+	}
+}

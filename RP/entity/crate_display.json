@@ -1,0 +1,45 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "realm:crate_display",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/common_crate_texture"
+			},
+			"geometry": {
+				"default": "geometry.crate_display"
+			},
+			"render_controllers": [
+				"controller.render.crate_display"
+			],
+			"scripts": {
+				"animate": [
+					"controller"
+				]
+			},
+			"animations": {
+				"controller": "controller.animation.crate_display",
+				"display_type.items": "animation.crate_display.display_type_items",
+				"display_type.blocks": "animation.crate_display.display_type_blocks",
+				"display_type.fences": "animation.crate_display.display_type_fences",
+				"display_type.walls": "animation.crate_display.display_type_walls",
+				"display_type.equippables": "animation.crate_display.display_type_equippables",
+				"display_type.amethyst": "animation.crate_display.display_type_amethyst",
+				"display_type.amethyst_2": "animation.crate_display.display_type_amethyst_2",
+				"display_type.heavy_core": "animation.crate_display.display_type_heavy_core",
+				"display_type.conduit": "animation.crate_display.display_type_conduit",
+				"display_type.buttons": "animation.crate_display.display_type_buttons",
+				"display_type.banners": "animation.crate_display.display_type_banners",
+				"display_type.pointed_dripstone": "animation.crate_display.display_type_pointed_dripstone",
+				"display_type.rods": "animation.crate_display.display_type_rods",
+				"display_type.heads": "animation.crate_display.display_type_heads",
+				"display_type.trident": "animation.crate_display.display_type_trident",
+				"display_type.golem_statue": "animation.crate_display.display_type_golem_statue"
+			},
+			"enable_attachables": true
+		}
+	}
+}

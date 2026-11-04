@@ -1,0 +1,18 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "ds_oe:hologram",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/ds_oe_hologram"
+			},
+			"geometry": {
+				"default": "geometry.ds_oe_hologram"
+			},
+			"render_controllers": ["controller.render.default"]
+		}
+	}
+}

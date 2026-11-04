@@ -1,0 +1,24 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "idk:spawn_protection",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/spawn_protection"
+			},
+			"geometry": {
+				"default": "geometry.spawn_protection"
+			},
+			"render_controllers": [
+				"controller.render.spawn_protection"
+			],
+			"spawn_egg": {
+				"base_color": "#000000",
+				"overlay_color": "#FFFFFF"
+			}
+		}
+	}
+}
