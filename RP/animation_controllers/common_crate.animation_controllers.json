@@ -1,0 +1,40 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.common_crate": {
+			"initial_state": "closed",
+			"states": {
+				"closed": {
+					"transitions": [
+						{ "opening": "query.property('realm:crate_state') == 'opening'" },
+						{ "open": "query.property('realm:crate_state') == 'open'" },
+						{ "closing": "query.property('realm:crate_state') == 'closing'" }
+					]
+				},
+				"opening": {
+					"animations": ["open"],
+					"transitions": [
+						{ "open": "query.property('realm:crate_state') == 'open'" },
+						{ "closed": "query.property('realm:crate_state') == 'closed'" }
+					]
+				},
+				"open": {
+					"animations": ["open_idle"],
+					"transitions": [
+						{ "closing": "query.property('realm:crate_state') == 'closing'" },
+						{ "closed": "query.property('realm:crate_state') == 'closed'" },
+						{ "opening": "query.property('realm:crate_state') == 'opening'" }
+					]
+				},
+				"closing": {
+					"animations": ["close"],
+					"transitions": [
+						{ "closed": "query.property('realm:crate_state') == 'closed'" },
+						{ "opening": "query.property('realm:crate_state') == 'opening'" },
+						{ "open": "query.property('realm:crate_state') == 'open'" }
+					]
+				}
+			}
+		}
+}
+}

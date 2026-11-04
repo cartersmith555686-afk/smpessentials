@@ -1,0 +1,46 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.crate_display": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{ "display_type.items": "query.property('realm:display_type') == 'items'" },
+						{ "display_type.blocks": "query.property('realm:display_type') == 'blocks'" },
+						{ "display_type.fences": "query.property('realm:display_type') == 'fences'" },
+						{ "display_type.walls": "query.property('realm:display_type') == 'walls'" },
+						{ "display_type.equippables": "query.property('realm:display_type') == 'equippables'" },
+						{ "display_type.amethyst": "query.property('realm:display_type') == 'amethyst'" },
+						{ "display_type.amethyst_2": "query.property('realm:display_type') == 'amethyst_2'" },
+						{ "display_type.heavy_core": "query.property('realm:display_type') == 'heavy_core'" },
+						{ "display_type.conduit": "query.property('realm:display_type') == 'conduit'" },
+						{ "display_type.buttons": "query.property('realm:display_type') == 'buttons'" },
+						{ "display_type.banners": "query.property('realm:display_type') == 'banners'" },
+						{ "display_type.pointed_dripstone": "query.property('realm:display_type') == 'pointed_dripstone'" },
+						{ "display_type.rods": "query.property('realm:display_type') == 'rods'" },
+						{ "display_type.heads": "query.property('realm:display_type') == 'heads'" },
+						{ "display_type.trident": "query.property('realm:display_type') == 'trident'" },
+						{ "display_type.golem_statue": "query.property('realm:display_type') == 'golem_statue'" }
+					]
+				},
+				"display_type.items": { "animations": ["display_type.items"], "transitions": [{ "default": "query.property('realm:display_type') != 'items'" }] },
+				"display_type.blocks": { "animations": ["display_type.blocks"], "transitions": [{ "default": "query.property('realm:display_type') != 'blocks'" }] },
+				"display_type.fences": { "animations": ["display_type.fences"], "transitions": [{ "default": "query.property('realm:display_type') != 'fences'" }] },
+				"display_type.walls": { "animations": ["display_type.walls"], "transitions": [{ "default": "query.property('realm:display_type') != 'walls'" }] },
+				"display_type.equippables": { "animations": ["display_type.equippables"], "transitions": [{ "default": "query.property('realm:display_type') != 'equippables'" }] },
+				"display_type.amethyst": { "animations": ["display_type.amethyst"], "transitions": [{ "default": "query.property('realm:display_type') != 'amethyst'" }] },
+				"display_type.amethyst_2": { "animations": ["display_type.amethyst_2"], "transitions": [{ "default": "query.property('realm:display_type') != 'amethyst_2'" }] },
+				"display_type.heavy_core": { "animations": ["display_type.heavy_core"], "transitions": [{ "default": "query.property('realm:display_type') != 'heavy_core'" }] },
+				"display_type.conduit": { "animations": ["display_type.conduit"], "transitions": [{ "default": "query.property('realm:display_type') != 'conduit'" }] },
+				"display_type.buttons": { "animations": ["display_type.buttons"], "transitions": [{ "default": "query.property('realm:display_type') != 'buttons'" }] },
+				"display_type.banners": { "animations": ["display_type.banners"], "transitions": [{ "default": "query.property('realm:display_type') != 'banners'" }] },
+				"display_type.pointed_dripstone": { "animations": ["display_type.pointed_dripstone"], "transitions": [{ "default": "query.property('realm:display_type') != 'pointed_dripstone'" }] },
+				"display_type.rods": { "animations": ["display_type.rods"], "transitions": [{ "default": "query.property('realm:display_type') != 'rods'" }] },
+				"display_type.heads": { "animations": ["display_type.heads"], "transitions": [{ "default": "query.property('realm:display_type') != 'heads'" }] },
+				"display_type.trident": { "animations": ["display_type.trident"], "transitions": [{ "default": "query.property('realm:display_type') != 'trident'" }] },
+				"display_type.golem_statue": { "animations": ["display_type.golem_statue"], "transitions": [{ "default": "query.property('realm:display_type') != 'golem_statue'" }] }
+			}
+		}
+	}
+}
